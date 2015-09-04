@@ -19,11 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLP-2j-cvM">
-                                <rect key="frame" x="20" y="50" width="44" height="21"/>
+                                <rect key="frame" x="20" y="50" width="43.5" height="20.5"/>
                                 <accessibility key="accessibilityConfiguration" label="asdf"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="D6w-aZ-3lK"/>
-                                    <constraint firstAttribute="height" constant="21" id="PJA-7i-XVl"/>
+                                    <constraint firstAttribute="width" constant="44" id="3zD-i6-3fI"/>
+                                    <constraint firstAttribute="height" constant="20.5" id="Rg2-kC-v0i"/>
                                 </constraints>
                                 <string key="text" base64-UTF8="YES">
 E1BpdGNoOg
@@ -32,76 +32,23 @@ E1BpdGNoOg
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Unknown Pitch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekd-mc-vm1" userLabel="Pitch Value">
-                                <rect key="frame" x="179.5" y="50.5" width="115" height="20.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="11" id="EzG-NH-C56"/>
-                                    <constraint firstAttribute="height" constant="21" id="Ooq-bp-8hS"/>
-                                    <constraint firstAttribute="width" constant="11" id="elG-Vf-PJV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="EzG-NH-C56"/>
-                                        <exclude reference="Ooq-bp-8hS"/>
-                                        <exclude reference="elG-Vf-PJV"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roll:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pkr-v2-QhP">
-                                <rect key="frame" x="20" y="79" width="33" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown Pitch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekd-mc-vm1" userLabel="Pitch Value">
+                                <rect key="frame" x="72" y="50" width="115" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yaw:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6v-84-dkX">
-                                <rect key="frame" x="20" y="107.5" width="35.5" height="20.5"/>
+                                <rect key="frame" x="20" y="78.5" width="35.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Unknown Yaw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ4-rS-xPB" userLabel="Yaw Value">
-                                <rect key="frame" x="187.5" y="107.5" width="107" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordinates:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6Z-OZ-9Ic">
-                                <rect key="frame" x="20" y="136" width="97.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Unknown Coordinates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wE6-zh-diD" userLabel="Coordinate Value">
-                                <rect key="frame" x="125.5" y="136" width="169" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown Yaw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ4-rS-xPB" userLabel="Yaw Value">
+                                <rect key="frame" x="79.5" y="78" width="107" height="20.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="41" id="naY-5P-naC"/>
+                                    <constraint firstAttribute="width" constant="107" id="elb-ft-Qyf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="naY-5P-naC"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Altitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWm-j3-caC">
-                                <rect key="frame" x="20" y="164" width="64" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Unknown Altitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y6-ch-L5Z" userLabel="Altitude Value">
-                                <rect key="frame" x="159" y="164" width="135.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Unknown Roll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ut-CF-sih" userLabel="Roll Value">
-                                <rect key="frame" x="190" y="79" width="104.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -109,38 +56,21 @@ E1BpdGNoOg
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dZ4-rS-xPB" firstAttribute="baseline" secondItem="G6v-84-dkX" secondAttribute="baseline" id="1Al-x4-Yca"/>
                             <constraint firstItem="dZ4-rS-xPB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G6v-84-dkX" secondAttribute="trailing" constant="8" symbolic="YES" id="2Xy-mD-HCn"/>
-                            <constraint firstItem="ekd-mc-vm1" firstAttribute="trailing" secondItem="0ut-CF-sih" secondAttribute="trailing" id="753-oE-vyK"/>
-                            <constraint firstItem="Z6Z-OZ-9Ic" firstAttribute="leading" secondItem="JLP-2j-cvM" secondAttribute="leading" id="7w3-nA-KL9"/>
-                            <constraint firstItem="5Y6-ch-L5Z" firstAttribute="baseline" secondItem="aWm-j3-caC" secondAttribute="baseline" id="9Ei-0Q-S2q"/>
-                            <constraint firstItem="Z6Z-OZ-9Ic" firstAttribute="top" secondItem="G6v-84-dkX" secondAttribute="bottom" constant="8" symbolic="YES" id="Ep9-ig-CMe"/>
-                            <constraint firstItem="wE6-zh-diD" firstAttribute="baseline" secondItem="Z6Z-OZ-9Ic" secondAttribute="baseline" id="Khv-vT-ysY"/>
-                            <constraint firstItem="5Y6-ch-L5Z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aWm-j3-caC" secondAttribute="trailing" constant="8" symbolic="YES" id="Lfo-cH-Bxf"/>
+                            <constraint firstItem="ekd-mc-vm1" firstAttribute="leading" secondItem="JLP-2j-cvM" secondAttribute="trailing" priority="750" constant="8" symbolic="YES" id="Kfr-fR-hZ0"/>
                             <constraint firstItem="dZ4-rS-xPB" firstAttribute="trailing" secondItem="ekd-mc-vm1" secondAttribute="trailing" id="LlI-Mh-ob8"/>
-                            <constraint firstItem="wE6-zh-diD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Z6Z-OZ-9Ic" secondAttribute="trailing" constant="8" symbolic="YES" id="N3w-D2-hq5"/>
-                            <constraint firstItem="wE6-zh-diD" firstAttribute="trailing" secondItem="ekd-mc-vm1" secondAttribute="trailing" id="QT2-8m-1tB"/>
-                            <constraint firstItem="0ut-CF-sih" firstAttribute="baseline" secondItem="Pkr-v2-QhP" secondAttribute="baseline" id="QaN-cZ-fXg"/>
-                            <constraint firstItem="Pkr-v2-QhP" firstAttribute="leading" secondItem="JLP-2j-cvM" secondAttribute="leading" id="RKY-XL-yP3"/>
                             <constraint firstItem="ekd-mc-vm1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JLP-2j-cvM" secondAttribute="trailing" constant="8" symbolic="YES" id="SVf-je-foR"/>
                             <constraint firstItem="dZ4-rS-xPB" firstAttribute="baseline" secondItem="G6v-84-dkX" secondAttribute="baseline" id="VUm-7J-URU"/>
-                            <constraint firstItem="5Y6-ch-L5Z" firstAttribute="trailing" secondItem="ekd-mc-vm1" secondAttribute="trailing" id="Xp1-75-8Zo"/>
                             <constraint firstItem="G6v-84-dkX" firstAttribute="leading" secondItem="JLP-2j-cvM" secondAttribute="leading" id="anx-jR-YMQ"/>
                             <constraint firstItem="JLP-2j-cvM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="50" id="cPS-bP-mmW"/>
-                            <constraint firstItem="G6v-84-dkX" firstAttribute="top" secondItem="Pkr-v2-QhP" secondAttribute="bottom" constant="8" symbolic="YES" id="dRB-pf-kFS"/>
-                            <constraint firstItem="0ut-CF-sih" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Pkr-v2-QhP" secondAttribute="trailing" constant="8" symbolic="YES" id="kd3-EM-S1p"/>
                             <constraint firstItem="JLP-2j-cvM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pEM-2O-HOM"/>
+                            <constraint firstItem="G6v-84-dkX" firstAttribute="top" secondItem="JLP-2j-cvM" secondAttribute="bottom" constant="8" symbolic="YES" id="r1j-Ae-eUn"/>
                             <constraint firstItem="ekd-mc-vm1" firstAttribute="baseline" secondItem="JLP-2j-cvM" secondAttribute="baseline" id="svV-4D-gix"/>
-                            <constraint firstItem="0ut-CF-sih" firstAttribute="trailing" secondItem="ekd-mc-vm1" secondAttribute="trailing" id="w0f-cq-Wds"/>
-                            <constraint firstItem="Pkr-v2-QhP" firstAttribute="top" secondItem="JLP-2j-cvM" secondAttribute="bottom" constant="8" symbolic="YES" id="yjK-vu-qrc"/>
-                            <constraint firstItem="aWm-j3-caC" firstAttribute="top" secondItem="Z6Z-OZ-9Ic" secondAttribute="bottom" constant="8" symbolic="YES" id="yo9-Ro-RKP"/>
-                            <constraint firstItem="aWm-j3-caC" firstAttribute="leading" secondItem="JLP-2j-cvM" secondAttribute="leading" id="z4B-n3-LTM"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="altitudeLabel" destination="5Y6-ch-L5Z" id="qbV-3M-ppT"/>
-                        <outlet property="coordinateLabel" destination="wE6-zh-diD" id="dZ8-vG-Wry"/>
                         <outlet property="pitchLabel" destination="ekd-mc-vm1" id="Z51-Up-Zdn"/>
-                        <outlet property="rollLabel" destination="0ut-CF-sih" id="XyW-RS-f2u"/>
                         <outlet property="yawLabel" destination="dZ4-rS-xPB" id="J1t-Q6-kYS"/>
                     </connections>
                 </viewController>

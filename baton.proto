@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+// TODO: PR for protoc-swift making generated code conform to API (i.e. throws)
+
+message PointerState {
+    required double pitch = 1;
+    required double yaw = 2;
+}

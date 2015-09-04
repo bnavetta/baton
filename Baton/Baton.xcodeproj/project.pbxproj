@@ -15,9 +15,12 @@
 		B599B62B1B98A08100964013 /* BatonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599B62A1B98A08100964013 /* BatonTests.swift */; };
 		B599B6361B98A08100964013 /* BatonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599B6351B98A08100964013 /* BatonUITests.swift */; };
 		B599B6441B98A09000964013 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B599B6431B98A09000964013 /* CoreMotion.framework */; };
-		B599B6461B98AB6500964013 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B599B6451B98AB6500964013 /* CoreLocation.framework */; };
 		B599B6481B98C45C00964013 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B599B6471B98C45C00964013 /* CoreBluetooth.framework */; };
-		B599B64A1B98C49600964013 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599B6491B98C49600964013 /* Sender.swift */; settings = {ASSET_TAGS = (); }; };
+		B599B6851B98F27D00964013 /* BatonPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599B6841B98F27D00964013 /* BatonPeripheral.swift */; settings = {ASSET_TAGS = (); }; };
+		B5B462C31B9902C900994D3D /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B462C11B9902C900994D3D /* ProtocolBuffers.framework */; };
+		B5B462C41B9902C900994D3D /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B462C21B9902C900994D3D /* XCGLogger.framework */; };
+		B5B462C61B99051A00994D3D /* Baton.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B462C51B99051A00994D3D /* Baton.proto.swift */; settings = {ASSET_TAGS = (); }; };
+		B5B462CA1B99102700994D3D /* PointerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B462C91B99102700994D3D /* PointerService.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +55,12 @@
 		B599B6351B98A08100964013 /* BatonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatonUITests.swift; sourceTree = "<group>"; };
 		B599B6371B98A08100964013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B599B6431B98A09000964013 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		B599B6451B98AB6500964013 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B599B6471B98C45C00964013 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		B599B6491B98C49600964013 /* Sender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		B599B6841B98F27D00964013 /* BatonPeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatonPeripheral.swift; sourceTree = "<group>"; };
+		B5B462C11B9902C900994D3D /* ProtocolBuffers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProtocolBuffers.framework; path = ../Carthage/Build/iOS/ProtocolBuffers.framework; sourceTree = "<group>"; };
+		B5B462C21B9902C900994D3D /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = ../Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
+		B5B462C51B99051A00994D3D /* Baton.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Baton.proto.swift; path = ../../Baton.proto.swift; sourceTree = "<group>"; };
+		B5B462C91B99102700994D3D /* PointerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointerService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5B462C31B9902C900994D3D /* ProtocolBuffers.framework in Frameworks */,
+				B5B462C41B9902C900994D3D /* XCGLogger.framework in Frameworks */,
 				B599B6481B98C45C00964013 /* CoreBluetooth.framework in Frameworks */,
-				B599B6461B98AB6500964013 /* CoreLocation.framework in Frameworks */,
 				B599B6441B98A09000964013 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,8 +95,9 @@
 		B599B6091B98A08100964013 = {
 			isa = PBXGroup;
 			children = (
+				B5B462C11B9902C900994D3D /* ProtocolBuffers.framework */,
+				B5B462C21B9902C900994D3D /* XCGLogger.framework */,
 				B599B6471B98C45C00964013 /* CoreBluetooth.framework */,
-				B599B6451B98AB6500964013 /* CoreLocation.framework */,
 				B599B6431B98A09000964013 /* CoreMotion.framework */,
 				B599B6141B98A08100964013 /* Baton */,
 				B599B6291B98A08100964013 /* BatonTests */,
@@ -112,12 +120,13 @@
 			isa = PBXGroup;
 			children = (
 				B599B6151B98A08100964013 /* AppDelegate.swift */,
-				B599B6171B98A08100964013 /* ViewController.swift */,
-				B599B6191B98A08100964013 /* Main.storyboard */,
+				B5B462C91B99102700994D3D /* PointerService.swift */,
+				B599B6841B98F27D00964013 /* BatonPeripheral.swift */,
+				B5B462C51B99051A00994D3D /* Baton.proto.swift */,
+				B5B462C71B990D2400994D3D /* UI */,
 				B599B61C1B98A08100964013 /* Assets.xcassets */,
 				B599B61E1B98A08100964013 /* LaunchScreen.storyboard */,
 				B599B6211B98A08100964013 /* Info.plist */,
-				B599B6491B98C49600964013 /* Sender.swift */,
 			);
 			path = Baton;
 			sourceTree = "<group>";
@@ -140,6 +149,15 @@
 			path = BatonUITests;
 			sourceTree = "<group>";
 		};
+		B5B462C71B990D2400994D3D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B599B6171B98A08100964013 /* ViewController.swift */,
+				B599B6191B98A08100964013 /* Main.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,6 +168,7 @@
 				B599B60E1B98A08100964013 /* Sources */,
 				B599B60F1B98A08100964013 /* Frameworks */,
 				B599B6101B98A08100964013 /* Resources */,
+				B57B422F1B99007800B7FD9C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -265,13 +284,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B57B422F1B99007800B7FD9C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../Carthage/Build/iOS/ProtocolBuffers.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/XCGLogger.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B599B60E1B98A08100964013 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B599B6851B98F27D00964013 /* BatonPeripheral.swift in Sources */,
 				B599B6181B98A08100964013 /* ViewController.swift in Sources */,
-				B599B64A1B98C49600964013 /* Sender.swift in Sources */,
+				B5B462CA1B99102700994D3D /* PointerService.swift in Sources */,
+				B5B462C61B99051A00994D3D /* Baton.proto.swift in Sources */,
 				B599B6161B98A08100964013 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				INFOPLIST_FILE = Baton/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -426,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				INFOPLIST_FILE = Baton/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -501,6 +542,7 @@
 				B599B63C1B98A08100964013 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B599B63D1B98A08100964013 /* Build configuration list for PBXNativeTarget "BatonTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +551,7 @@
 				B599B63F1B98A08100964013 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B599B6401B98A08100964013 /* Build configuration list for PBXNativeTarget "BatonUITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +560,7 @@
 				B599B6421B98A08100964013 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

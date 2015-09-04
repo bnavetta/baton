@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import CoreLocation
-import CoreMotion
 
-extension Double {
+private extension Double {
     var rad2deg: Double {
         return self * 180.0 / M_PI
     }
@@ -22,113 +20,63 @@ private let numberFormatter: NSNumberFormatter = {
     return formatter
     }()
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
-
+class ViewController: UIViewController, PointerServiceDelegate, BatonPeripheralDelegate {
+    
+    let pointerService = PointerService()
+    let peripheral = BatonPeripheral()
+    
     @IBOutlet
     weak var pitchLabel: UILabel!
     
     @IBOutlet
-    weak var rollLabel: UILabel!
-    
-    @IBOutlet
     weak var yawLabel: UILabel!
     
-    @IBOutlet
-    weak var coordinateLabel: UILabel!
-    
-    @IBOutlet
-    weak var altitudeLabel: UILabel!
-    
-    let sender: Sender = {
-        var sender = Sender()
-        sender.setup()
-        return sender
-    }()
-    
-    let motionManager = CMMotionManager()
-    let locationManager = CLLocationManager()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if motionManager.deviceMotionAvailable {
-            motionManager.deviceMotionUpdateInterval = 0.1
-            motionManager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue()) {
-                [weak self] (data: CMDeviceMotion?, error: NSError?) in
-                
-                if let data = data {
-                    let attitude = data.attitude
-                    
-                    let pitch = numberFormatter.stringFromNumber(attitude.pitch.rad2deg) ?? "?"
-                    self?.pitchLabel.text = "\(pitch)˚"
-                    
-                    let roll = numberFormatter.stringFromNumber(attitude.roll.rad2deg) ?? "?"
-                    self?.rollLabel.text = "\(roll)˚"
-                    
-                    
-                    let yaw = numberFormatter.stringFromNumber(attitude.yaw.rad2deg) ?? "?"
-                    self?.yawLabel.text = "\(yaw)˚"
-                    
-//                    self?.sender.updatePitch(attitude.pitch.rad2deg)
-//                    self?.sender.updateYaw(attitude.yaw.rad2deg)
-                    self?.sender.updateAll(attitude.pitch, yaw: attitude.yaw)
-                    
-                }
-                else {
-                     self?.pitchLabel.text = "Unknown"
-                }
-            }
-        }
-        else {
-            print("Device Motion not available")
-        }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         
-        locationManager.delegate = self
-        if CLLocationManager.authorizationStatus() == .NotDetermined {
-            locationManager.requestWhenInUseAuthorization()
-        }
+        pointerService.delegate = self
+        peripheral.delegate = self
+        pointerService.start()
+    }
+    
+    deinit {
+        pointerService.stop()
+        peripheral.stop()
+    }
+    
+    func presentError(error: NSError, title: String, defaultFailureReason: String) {
+        let failureReason = error.localizedFailureReason ?? defaultFailureReason
+        let message = "\(error.localizedDescription). \(failureReason)"
         
-//        if manager.gyroAvailable {
-//            manager.gyroUpdateInterval = 0.1
-//            manager.startGyroUpdatesToQueue(NSOperationQueue.mainQueue()) {
-//                [weak self] (data: CMGyroData?, error: NSError?) in
-//                
-//                if let error = error {
-//                    print("Error accessing gyroscope: \(error)")
-//                }
-//                else {
-//                    self?.pitchLabel.text = data.
-//                }
-//            }
-//        }
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {_ in})
+        alert.addAction(defaultAction)
+        presentViewController(alert, animated: true, completion: nil)
     }
     
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == .AuthorizedAlways || status == .AuthorizedWhenInUse {
-            locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-            locationManager.startUpdatingLocation()
-        }
-    }
-
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last {
-            let eventDate = location.timestamp
-            let howRecent = eventDate.timeIntervalSinceNow
-            if abs(howRecent) < 15.0 {
-                // Only use recent events
-                let latitude = numberFormatter.stringFromNumber(location.coordinate.latitude) ?? "?"
-                let longitude = numberFormatter.stringFromNumber(location.coordinate.longitude) ?? "?"
-                let altitude = numberFormatter.stringFromNumber(location.altitude) ?? "?"
-                
-                self.coordinateLabel.text = "(\(latitude), \(longitude))"
-                self.altitudeLabel.text = altitude
-//                self.locationManager.stopUpdatingLocation()
-            }
-        }
+    // MARK: PointerServiceDelegate
+    
+    func onStateChange(state: PointerState) {
+        let pitch = numberFormatter.stringFromNumber(state.pitch.rad2deg) ?? "?"
+        let yaw = numberFormatter.stringFromNumber(state.yaw.rad2deg) ?? "?"
+        pitchLabel.text = "\(pitch)˚"
+        yawLabel.text = "\(yaw)˚"
+        
+        peripheral.updatePointerState(state)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func onError(error: NSError) {
+        presentError(error, title: "Motion Error", defaultFailureReason: "Unable to determine pointer state from device motion")
+    }
+    
+    // MARK: BatonPeripheralDelegate
+    
+    func batonPeripheral(peripheral: BatonPeripheral, encounteredError error: NSError) {
+        presentError(error, title: "Bluetooth Error", defaultFailureReason: "Unable to publish data")
+    }
+    
+    func batonPeripheralIsReady(peripheral: BatonPeripheral) {
+        peripheral.start()
     }
 }
 

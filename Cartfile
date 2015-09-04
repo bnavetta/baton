@@ -1,0 +1,4 @@
+# Seems to be broken on latest Swift
+# github "emaloney/CleanroomLogger"
+github "alexeyxo/protobuf-swift" "Compiler2.0-ProtoBuf2.6-Swift2.0"
+github "DaveWoodCom/XCGLogger" "swift_2.0"
